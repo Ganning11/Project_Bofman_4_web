@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bofman4 Home Page</title>
+    <link rel="shortcut icon" type="image" href="asset/logo.png">
+    <link rel="stylesheet" href="css/style_home_2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+
+<body class="utama" id="blur">
+
+    <div id="block">
+
+    </div>
+
+    <div class="clock">
+        <div id="hour">00</div>
+        <span>:</span>
+        <div id="minute">00</div>
+        <span>:</span>
+        <div id="seconds">00</div>
+
+
+    </div>
+
+    <script src="js/clock.js"></script>
+    <!--Bilah navigasi kiri-->
+
+    <div class="sound">
+        <img src="asset/off.png" id="icon" width="40px">
+
+    </div>
+
+    <audio autoplay loop id="mySong">
+        <source src="asset/bg_music.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+
+        var vid = document.getElementById("mySong");
+        vid.volume = 0.2;
+        var mySong = document.getElementById("mySong");
+        var icon = document.getElementById("icon");
+
+        icon.onclick = function () {
+            if (mySong.paused) {
+                mySong.play();
+                icon.src = "asset/on.png"
+            } else {
+                mySong.pause();
+                icon.src = "asset/off.png"
+            }
+        }
+
+        document.addEventListener('click', musicPlay);
+        function musicPlay() {
+            document.getElementById('mySong').play();
+            document.removeEventListener('click', musicPlay);
+            icon.src = "asset/on.png"
+        }
+    </script>
+
+    <div class="sidebar">
+
+        <ul class="nav-list">
+
+            <li>
+                <a href="home_1.html">
+                    <i class="fas fa-home fa-2x"></i>
+                </a>
+                <span class="tooltip">Home</span>
+            </li>
+            <li>
+                <a href="#" onclick="info()">
+                    <i class="fas fa-info fa-2x"></i>
+                </a>
+                <span class="tooltip">Info</span>
+            </li>
+            <li>
+                <a href="#" onclick="rundown()">
+                    <i class="fas fa-list fa-2x"></i>
+                </a>
+                <span class="tooltip">Rundown</span>
+            </li>
+
+        </ul>
+
+
+
+    </div>
+
+    <!--Halaman utama web boofman-->
+    <div class="content" id="none">
+
+        <div class="container">
+            <img src="asset/theater.png" alt="sample89" />
+            <figcaption>
+                <h3>Enter</h3>
+            </figcaption>
+            <a href="acara.html"></a>
+        </div>
+
+        <div class="jalan">
+            <img src="asset/museum.png" />
+            <figcaption>
+                <h3>Enter</h3>
+            </figcaption>
+            <a href="museum.html"></a>
+
+        </div>
+
+
+
+
+    </div>
+
+    <div id="popup_info">
+        <div class="scroll_bg">
+            <div class="scroll_div">
+                <a href="#" onclick="info()">
+                    <i class="fas fa-times fa-2x"></i>
+                </a>
+                <div class="scroll_object">
+                    <h2>SCAN HERE</h2>
+                    <h2>FOR</h2>
+                    <h2>INFORMATION</h2>
+
+                    <div class="title">
+
+                        <img src="asset/qr.png">
+                    </div>
+                    <h1>Share this event</h1>
+                    <h4>Share this event to your friend and enjoy together</h4>
+                    <div class="poster">
+                        <div class="row_info">
+                            <div class="image_info">
+                                <img src="asset/poster.png">
+                                <div class="details_info">
+                                    <h4>Download this file and share with yourfriends</h4>
+                                    <div class="more_info">
+                                        <a href="asset/poster.png" class="download" download="BOFFMAN 4">Download</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div id="popup_rundown">
+        <div class="scroll_bg">
+            <div class="scroll_di">
+                <a href="#" onclick="rundown()">
+                    <i class="fas fa-times fa-2x"></i>
+                </a>
+                <div class="scroll_object">
+                    <div class="title">
+
+
+                    </div>
+
+
+
+
+
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <div id="popup_marketplace">
+        <div class="scroll_bg">
+            <div class="scroll_div">
+                <a href="#" onclick="marketplace()">
+                    <i class="fas fa-times fa-2x"></i>
+                </a>
+                <div class="scroll_object">
+                    <div class="title">
+                        <img src="asset/marketplace_bg.png" alt="">
+                    </div>
+
+                    <h2>Sponsors</h2>
+
+                    <div class="poster">
+                        <div class="row">
+                            <div class="image">
+                                <img src="asset/rsz_kupu.png">
+                                <div class="details">
+                                    <h4>Kupu.id</h4>
+                                    <div class="more">
+                                        <a href="https://www.kupu.id/id/index.html?v=2" class="download">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="image">
+                                <img src="asset/rsz_fruit_tea.png">
+                                <div class="details">
+                                    <h4>Fruit Tea by Sosro</h4>
+                                    <div class="more">
+                                        <a href="asset/poster.png" class="download" download="BOFFMAN 4">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="image">
+                                <img src="asset/inez.jpeg">
+                                <div class="details">
+                                    <h4>Download this file and share with yourfriends</h4>
+                                    <div class="more">
+                                        <a href="asset/poster.png" class="download" download="BOFFMAN 4">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <h2>Buy Now</h2>
+
+
+
+
+
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <script type="text/javascript">
+
+
+        function info() {
+
+            var popup_info = document.getElementById('popup_info');
+            popup_info.classList.toggle('active')
+            var content = document.getElementById('none');
+            content.classList.toggle('active')
+        }
+
+        function rundown() {
+
+            var popup_rundown = document.getElementById('popup_rundown');
+            popup_rundown.classList.toggle('active')
+            var content = document.getElementById('none');
+            content.classList.toggle('active')
+        }
+
+        function marketplace() {
+            var popup_marketplace = document.getElementById('popup_marketplace');
+            popup_marketplace.classList.toggle('active')
+            var content = document.getElementById('none');
+            content.classList.toggle('active')
+        }
+
+
+
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>
